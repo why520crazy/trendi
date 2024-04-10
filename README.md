@@ -2,6 +2,9 @@
 
 Futuristic TypeScript DI Library.
 
+## Usage
+
+Property @Inject:
 ```ts
 import { Inject, Injectable, inject, injector } from 'trendi';
 
@@ -16,14 +19,38 @@ class Bar {
     providedIn: 'root'
 })
 class Foo {
-    static deps = [Bar];
-
-    @Inject(Bar) bar2: Bar;
-
-    bar3 = inject(Bar);
-
-    constructor(private bar1: Bar) {}
+    @Inject(Bar) bar: Bar;
 }
 
-console.log(injector.get(Foo));
+injector.get(Foo); // Foo { bar: Bar { name: 'Bar' } }
+
+```
+
+Property Initialize Inject:
+```ts
+
+@Injectable({
+    providedIn: 'root'
+})
+class Foo {
+    bar = inject(Bar);
+}
+
+injector.get(Foo); // Foo { bar: Bar { name: 'Bar' } }
+```
+
+Constructor Inject
+```ts
+import { Inject, Injectable, inject, injector } from 'trendi';
+
+@Injectable({
+    providedIn: 'root'
+})
+class Foo {
+    static deps = [Bar];
+
+    constructor(private bar: Bar) {}
+}
+
+injector.get(Foo); // Foo { bar: Bar { name: 'Bar' } }
 ```
