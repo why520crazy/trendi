@@ -1,4 +1,5 @@
 import { getRootInjector } from './create-injector';
+import { InjectOptions } from './decorators';
 import { InjectionToken } from './injection-token';
 import { InjectorImpl } from './injector-impl';
 import { Provider } from './provider';
@@ -18,5 +19,8 @@ export abstract class Injector {
 
     abstract register(providers: Provider[] | Provider): void;
 
-    abstract get<T>(token: InjectionToken): T;
+    abstract get<T>(token: InjectionToken<T>, options: InjectOptions & { optional: true }): T | undefined;
+    abstract get<T>(token: InjectionToken<T>, options?: InjectOptions): T;
+    abstract get<T extends object>(type: InjectionToken<T>, options?: InjectOptions & { optional: true }): T | undefined;
+    abstract get<T extends object>(type: InjectionToken<T>, options?: InjectOptions): T;
 }

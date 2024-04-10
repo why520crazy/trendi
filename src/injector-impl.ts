@@ -44,7 +44,6 @@ export class InjectorImpl implements Injector {
                         const depsValue = deps.map((token: InjectionToken) => {
                             return this.get(token);
                         });
-                        console.log(depsValue)
                         resolver.value = new resolver.provider.ctor(...depsValue);
                     } else {
                         resolver.value = new resolver.provider.ctor();

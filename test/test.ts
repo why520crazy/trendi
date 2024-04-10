@@ -1,21 +1,23 @@
-import { injector } from '../src';
+import { Inject, Injectable, inject, injector } from '../src';
 
-class B {
-    name = 'B Name';
+@Injectable({
+    providedIn: 'root'
+})
+class Bar {
+    name = 'Bar';
 }
 
-class A {
-    name = 'A Name';
+@Injectable({
+    providedIn: 'root'
+})
+class Foo {
+    static deps = [Bar];
 
-    constructor(private b: B) {}
+    @Inject(Bar) bar2: Bar;
+
+    bar3 = inject(Bar);
+
+    constructor(private bar1: Bar) {}
 }
 
-injector.register([
-    {
-        provide: A,
-        deps: [B]
-    },
-    B
-]);
-
-console.log(injector.get(A));
+console.log(injector.get(Foo));
