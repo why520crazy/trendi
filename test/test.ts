@@ -1,4 +1,4 @@
-import { Inject, Injectable, inject, injector } from '../src';
+import { Inject, Injectable, Injector, inject, injector } from '../src';
 
 @Injectable({
     providedIn: 'root'
@@ -21,3 +21,11 @@ class Foo {
 }
 
 console.log(injector.get(Foo));
+
+// injector.register([
+//     Bar,
+//     {
+//         provide: Foo,
+//         deps: [Bar]
+//     }
+// ]);

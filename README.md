@@ -54,3 +54,24 @@ class Foo {
 
 injector.get(Foo); // Foo { bar: Bar { name: 'Bar' } }
 ```
+
+## Register
+
+```ts
+class Bar {
+    name = 'Bar';
+}
+
+class Foo {
+    constructor(private bar: Bar) {}
+}
+
+injector.register([
+    Bar,
+    {
+        provide: Foo,
+        deps: [Bar]
+    }
+]);
+injector.get(Foo); // Foo { bar: Bar { name: 'Bar' } }
+```
