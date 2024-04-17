@@ -1,6 +1,6 @@
 {
   "name": "trendi",
-  "version": "0.0.1-next.0",
+  "version": "0.0.1-next.1",
   "license": "MIT",
   "scripts": {
     "start": "node --import tsx/esm ./test/test.ts",
