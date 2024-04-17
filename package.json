@@ -8,7 +8,7 @@
     "ts-node": "ts-node test/test.ts",
     "link": "npm run build && npm run link-only",
     "link-only": "ts-node ./scripts/link.ts",
-    "build": "npm run build-esm && npm run build-cjs && cp ./package.json ./dist/package.json",
+    "build": "rm -r ./dist && npm run build-esm && npm run build-cjs && cp ./package.json ./dist/package.json",
     "build-esm": "tsc",
     "build-cjs": "ts-node ./scripts/build.ts",
     "test": "nx test",
