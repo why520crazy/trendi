@@ -1,5 +1,5 @@
-import { Injector } from '../injector';
-import { Constructor } from '../types';
+import { Injector } from '../injector.js';
+import { Constructor } from '../types.js';
 
 export interface InjectableOptions {
     providedIn: 'root' | 'none';
@@ -7,6 +7,9 @@ export interface InjectableOptions {
 
 export function Injectable(options?: InjectableOptions) {
     return (target: object, context: ClassDecoratorContext) => {
+        // if (context && context.metadata) {
+        //     context.metadata['options'] = options;
+        // }
         context.addInitializer(() => {
             if (options?.providedIn === 'root') {
                 Injector.root.register({

@@ -1,5 +1,5 @@
-import { inject } from '../inject';
-import { InjectionToken } from '../injection-token';
+import { inject } from '../inject.js';
+import { InjectionToken } from '../injection-token.js';
 
 export interface InjectOptions {
     optional?: boolean;

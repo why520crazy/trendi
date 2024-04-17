@@ -1,7 +1,7 @@
-import { getCurrentInjector } from './context';
-import { getRootInjector } from './create-injector';
-import { InjectOptions } from './decorators';
-import { InjectionToken } from './injection-token';
+import { getCurrentInjector } from './context.js';
+import { getRootInjector } from './create-injector.js';
+import { InjectOptions } from './decorators/index.js';
+import { InjectionToken } from './injection-token.js';
 
 /**
  * @param type A token that represents a dependency that should be injected.

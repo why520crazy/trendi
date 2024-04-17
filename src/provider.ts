@@ -1,5 +1,5 @@
-import { InjectionToken } from "./injection-token";
-import { Constructor } from "./types";
+import { InjectionToken } from "./injection-token.js";
+import { Constructor } from "./types.js";
 
 export enum Lifecycles {
     singleton = 1,

@@ -1,2 +1,2 @@
-export * from './injectable';
-export * from './inject';
+export * from './injectable.js';
+export * from './inject.js';

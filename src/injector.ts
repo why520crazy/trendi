@@ -1,8 +1,8 @@
-import { getRootInjector } from './create-injector';
-import { InjectOptions } from './decorators';
-import { InjectionToken } from './injection-token';
-import { InjectorImpl } from './injector-impl';
-import { Provider } from './provider';
+import { getRootInjector } from './create-injector.js';
+import { InjectOptions } from './decorators/index.js';
+import { InjectionToken } from './injection-token.js';
+import { InjectorImpl } from './injector-impl.js';
+import { Provider } from './provider.js';
 
 export interface CreateInjectorOptions {
     parent: Injector;

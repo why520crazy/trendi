@@ -1,23 +1,23 @@
 {
-  "name": "@trendi/source",
-  "version": "0.0.0",
+  "name": "trendi",
+  "version": "0.0.1-next.0",
   "license": "MIT",
   "scripts": {
-    "start": "ts-node test/test.ts",
-    "build": "tsc",
-    "test": "nx test"
+    "start": "node --import tsx/esm ./test/test.ts",
+    "start1": "node --loader ts-node/esm test/test.ts",
+    "ts-node": "ts-node test/test.ts",
+    "build": "tsc && cp ./package.json ./dist/package.json",
+    "test": "nx test",
+    "pub": "cd dist && npm publish"
   },
-  "type": "commonjs",
-  "private": true,
-  "dependencies": {
-    "tslib": "^2.6.2"
-  },
+  "type": "module",
+  "private": false,
   "devDependencies": {
     "@types/jest": "^29.4.0",
-    "@types/node": "~18.7.1",
+    "@types/node": "^18.7.17",
     "@typescript-eslint/eslint-plugin": "^5.60.1",
     "@typescript-eslint/parser": "^5.60.1",
-    "esbuild": "^0.17.17",
+    "esbuild": "^0.17.19",
     "eslint": "~8.15.0",
     "eslint-config-prettier": "8.1.0",
     "jest": "^29.4.1",
@@ -25,6 +25,8 @@
     "prettier": "^2.6.2",
     "ts-jest": "^29.1.0",
     "ts-node": "^10.9.1",
-    "typescript": "~5.4.4"
+    "tslib": "^2.6.2",
+    "tsx": "^4.7.2",
+    "typescript": "~5.4.5"
   }
 }

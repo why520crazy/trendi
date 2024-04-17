@@ -1,8 +1,8 @@
-import { InjectionToken } from './injection-token';
-import { Injector } from './injector';
-import { Provider } from './provider';
-import { InnerProvider, normalizeProvider } from './provider-utils';
-import { coerceArray } from './utils';
+import { InjectionToken } from './injection-token.js';
+import { Injector } from './injector.js';
+import { Provider } from './provider.js';
+import { InnerProvider, normalizeProvider } from './provider-utils.js';
+import { coerceArray } from './utils.js';
 
 export class InjectorImpl implements Injector {
     private resolvers = new Map<

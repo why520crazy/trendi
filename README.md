@@ -1,10 +1,11 @@
 # Trendi
 
-Futuristic TypeScript DI Library.
+A lightweight powerful and futuristic dependency injection container for JavaScript/TypeScript.
 
 ## Usage
 
 Property @Inject:
+
 ```ts
 import { Inject, Injectable, inject, injector } from 'trendi';
 

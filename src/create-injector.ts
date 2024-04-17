@@ -1,5 +1,5 @@
-import { Injector } from './injector';
-import { InjectorImpl } from './injector-impl';
+import { Injector } from './injector.js';
+import { InjectorImpl } from './injector-impl.js';
 
 export function createInjector() {}
 

@@ -1,20 +1,23 @@
 {
   "compilerOptions": {
-    "rootDir": ".",
+    "rootDir": "./src",
     "outDir": "./dist",
     "sourceMap": true,
-    "declaration": false,
-    "moduleResolution": "node",
+    "declaration": true,
     "importHelpers": true,
-    "target": "es2015",
-    "module": "CommonJS",
-    "lib": ["es2020", "dom"],
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "Node16",
+    "lib": ["ES2022", "Decorators", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {},
     "esModuleInterop": true
   },
+  "ts-node": {
+    "esm": true
+  },
   "include": ["./src/**/*"],
-  "exclude": ["node_modules", "tmp"]
+  "exclude": ["node_modules", "tmp", "test"]
 }

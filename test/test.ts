@@ -1,4 +1,4 @@
-import { Inject, Injectable, Injector, inject, injector } from '../src';
+import { Inject, Injectable, Injector, inject, injector } from '../dist/index.js';
 
 @Injectable({
     providedIn: 'root'
@@ -13,14 +13,23 @@ class Bar {
 class Foo {
     static deps = [Bar];
 
-    @Inject(Bar) bar2: Bar;
+    @Inject(Bar) #bar2: Bar;
 
     bar3 = inject(Bar);
 
     constructor(private bar1: Bar) {}
 }
 
-console.log(injector.get(Foo));
+// class Bar {
+//     name = 'Bar';
+// }
+// class Foo {
+//     static deps = [Bar];
+
+//     bar3 = inject(Bar);
+
+//     constructor(private bar1: Bar) {}
+// }
 
 // injector.register([
 //     Bar,
@@ -29,3 +38,7 @@ console.log(injector.get(Foo));
 //         deps: [Bar]
 //     }
 // ]);
+
+console.log(injector.get(Foo));
+
+

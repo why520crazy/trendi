@@ -1,5 +1,5 @@
-import { resolveForwardRef } from './forward-ref';
-import { InjectionToken } from './injection-token';
+import { resolveForwardRef } from './forward-ref.js';
+import { InjectionToken } from './injection-token.js';
 import {
     ClassProvider,
     ConstructorProvider,
@@ -9,9 +9,9 @@ import {
     TokenProvider,
     TypeProvider,
     ValueProvider
-} from './provider';
-import { Constructor } from './types';
-import { isFunction, isNil, isObject } from './utils';
+} from './provider.js';
+import { Constructor } from './types.js';
+import { isFunction, isNil, isObject } from './utils.js';
 
 const USE_VALUE = 'useValue';
 
